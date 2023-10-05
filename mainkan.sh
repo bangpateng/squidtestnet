@@ -40,18 +40,3 @@ sqd init "$project_name" -t "$github_url"
 
 # Pindah ke direktori proyek yang baru dibuat
 cd "$project_name"
-
-# Jalankan perintah untuk meng-up Squid
-sqd up
-
-# Install dependensi Node.js
-npm ci
-
-# Build proyek Squid
-sqd build
-
-# Terapkan migrasi database
-sqd migration:apply
-
-# Jalankan proyek Squid
-sqd run .
