@@ -1,15 +1,10 @@
 #!/bin/bash
 
 # Update package list
-sudo apt update
-
-# Install Git
-sudo apt install git -y
+sudo apt update && sudo apt install git -y
 
 # Install Node.js and npm
-sudo apt install nodejs -y
-sudo apt install npm -y
-npm install -g npm@10.2.0
+sudo apt install nodejs -y && sudo apt install npm -y && npm install -g npm@10.2.0
 
 # Install Docker
 sudo apt-get install ca-certificates curl gnupg lsb-release -y
@@ -19,10 +14,9 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 # Configure npm global packages
-mkdir -p ~/global-node-packages
+mkdir global-node-packages
 npm config set prefix ~/global-node-packages
-echo 'export PATH="${HOME}/global-node-packages/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+export PATH="${HOME}/global-node-packages/bin:$PATH"
 
 # Install @subsquid/cli
 cd global-node-packages
