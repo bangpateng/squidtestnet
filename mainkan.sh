@@ -25,6 +25,7 @@ echo 'export PATH="${HOME}/global-node-packages/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 # Install @subsquid/cli
+cd global-node-packages
 npm install --global @subsquid/cli@latest
 
 # Minta input nama proyek dari pengguna
